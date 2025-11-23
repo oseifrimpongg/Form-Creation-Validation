@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () =>
          messages.push("Username must be at least 3 characters.");
       }
 
-      if (!email.includes("@") || !email.includes("."))
+      if (!validateEmail(email))
       {
          isValid = false;
          messages.push("Invalid email address.");
@@ -45,3 +45,8 @@ document.addEventListener("DOMContentLoaded", () =>
       }
    });
 });
+
+function validateEmail(email)
+{
+   return email.includes("@") && email.includes(".");
+}
